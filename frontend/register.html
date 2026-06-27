@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create a new PrepBuddy account.">
+    <title>PrepBuddy - Register</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card" style="max-width: 480px;">
+            <div class="auth-header">
+                <div class="auth-brand">
+                    <div class="auth-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <span class="auth-brand-name">PrepBuddy</span>
+                </div>
+                <h1 class="auth-title">Create Account</h1>
+                <p class="auth-subtitle">Start Socratic-guided career prep today</p>
+            </div>
+            
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" required placeholder="John Doe" autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email Address</label>
+                    <input type="email" id="register-email" required placeholder="name@example.com" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password (min 6 characters)</label>
+                    <input type="password" id="register-password" required placeholder="••••••••" minlength="6" autocomplete="new-password">
+                </div>
+                <div class="form-group">
+                    <label for="register-skill">Target Study Skill</label>
+                    <input type="text" id="register-skill" required placeholder="e.g. Python, SQL, React" list="skills-suggestions">
+                    <datalist id="skills-suggestions">
+                        <option value="Python"></option>
+                        <option value="SQL"></option>
+                        <option value="React"></option>
+                        <option value="JavaScript"></option>
+                        <option value="Java"></option>
+                    </datalist>
+                </div>
+                <button type="submit" class="btn btn-primary auth-submit-btn">Create Account</button>
+            </form>
+            
+            <div class="auth-redirect">
+                Already have an account? <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PrepBuddy Dashboard - View your learning analytics and target stats.">
+    <title>PrepBuddy - Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="app-frame">
+        <!-- Sidebar -->
+        <aside class="app-sidebar">
+            <div class="brand-section">
+                <div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <span class="brand-name">PrepBuddy</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link active" id="sidebar-nav-dash">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="chat.html" class="nav-link" id="sidebar-nav-chat">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>AI Buddy</span>
+                </a>
+                <a href="courses.html" class="nav-link" id="sidebar-nav-courses">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Course Search</span>
+                </a>
+                <a href="profile.html" class="nav-link" id="sidebar-nav-profile">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-user">
+                <div class="user-avatar" id="sidebar-avatar-initials">PB</div>
+                <div class="user-details">
+                    <span class="user-label-name" id="sidebar-user-name">Loading...</span>
+                    <span class="user-label-skill" id="sidebar-user-skill">Target: Loading...</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Viewport -->
+        <main class="app-viewport">
+            <header class="viewport-header">
+                <h1 class="viewport-title">Dashboard</h1>
+                <button class="btn btn-secondary" onclick="clearToken(); window.location.href='login.html';">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                </button>
+            </header>
+
+            <!-- Scrollable Viewport Content Wrapper -->
+            <div class="viewport-body">
+                <!-- Dashboard Analytics -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-regular fa-bookmark"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-saved-courses-val">0</span>
+                            <span class="stat-label">Saved Courses</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-regular fa-comments"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-chat-sessions-val">0</span>
+                            <span class="stat-label">Chat Sessions</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-topics-practiced-val">0</span>
+                            <span class="stat-label">Topics Practiced</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Welcome Info -->
+                <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 41, 59, 0.5) 100%);">
+                    <h2 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; margin-bottom: 0.5rem;" id="welcome-greeting">Welcome back!</h2>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                        You are currently practicing: <strong style="color: var(--primary-color);" id="welcome-skill-badge">Loading...</strong>. Let's work on interview questions, generate guided tutorials, and discover key course material.
+                    </p>
+                </div>
+
+                <!-- Quick Access Navigation Grid -->
+                <div class="navigation-grid">
+                    <a href="chat.html" class="nav-card">
+                        <div class="nav-card-icon"><i class="fa-solid fa-robot"></i></div>
+                        <h3>AI Buddy Tutor</h3>
+                        <p>Enter the Socratic workspace to practice syntax, algorithms, and design concepts with guide hints.</p>
+                    </a>
+                    <a href="courses.html" class="nav-card">
+                        <div class="nav-card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <h3>Course Explorer</h3>
+                        <p>Lookup tutorials across global indices, index resources, and bookmark materials on your dashboard.</p>
+                    </a>
+                    <a href="profile.html" class="nav-card">
+                        <div class="nav-card-icon"><i class="fa-solid fa-user-gear"></i></div>
+                        <h3>User Profile</h3>
+                        <p>Manage target preparation skills, check membership subscription details, and verify credentials.</p>
+                    </a>
+                </div>
+
+                <!-- Recent Activity list -->
+                <div class="card activity-card">
+                    <div class="activity-header">
+                        <h3 class="activity-title">Recent Learning Activity</h3>
+                    </div>
+                    <table class="activity-table">
+                        <thead>
+                            <tr>
+                                <th>Practice Topic</th>
+                                <th>Sessions</th>
+                                <th>Last Accessed</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activity-table-body">
+                            <!-- Table rows populated dynamically -->
+                        </tbody>
+                    </table>
+                    <div class="empty-activity" id="empty-activity-log" style="display: none;">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <p>No study sessions recorded yet. Start practicing with Buddy AI or query courses to track logs.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <a href="dashboard.html" class="mobile-nav-link active">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="chat.html" class="mobile-nav-link">
+            <i class="fa-solid fa-robot"></i>
+            <span>AI Buddy</span>
+        </a>
+        <a href="courses.html" class="mobile-nav-link">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Courses</span>
+        </a>
+        <a href="profile.html" class="mobile-nav-link">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find online courses and tutorials to upskill.">
+    <title>PrepBuddy - Courses</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/courses.css">
+</head>
+<body>
+    <div class="app-frame">
+        <!-- Sidebar -->
+        <aside class="app-sidebar">
+            <div class="brand-section">
+                <div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <span class="brand-name">PrepBuddy</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link" id="sidebar-nav-dash">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="chat.html" class="nav-link" id="sidebar-nav-chat">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>AI Buddy</span>
+                </a>
+                <a href="courses.html" class="nav-link active" id="sidebar-nav-courses">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Course Search</span>
+                </a>
+                <a href="profile.html" class="nav-link" id="sidebar-nav-profile">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-user">
+                <div class="user-avatar" id="sidebar-avatar-initials">PB</div>
+                <div class="user-details">
+                    <span class="user-label-name" id="sidebar-user-name">Loading...</span>
+                    <span class="user-label-skill" id="sidebar-user-skill">Target: Loading...</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Viewport -->
+        <main class="app-viewport">
+            <header class="viewport-header">
+                <h1 class="viewport-title" id="courses-viewport-title">Course Search</h1>
+                <div class="courses-tabs">
+                    <button class="course-tab-btn active" id="tab-search">Search Registry</button>
+                    <button class="course-tab-btn" id="tab-saved">Saved Courses</button>
+                </div>
+            </header>
+
+            <!-- Scrollable Viewport Content Wrapper -->
+            <div class="viewport-body">
+                <!-- Search inputs card (hidden when showing Saved Courses) -->
+                <div class="search-controls" id="search-controls-wrapper">
+                    <div class="form-group">
+                        <label for="course-skill-input">Study Skill</label>
+                        <input type="text" id="course-skill-input" placeholder="e.g. Python, SQL, React">
+                    </div>
+                    <div class="form-group">
+                        <label for="course-topic-input">Sub-Topic / Concept</label>
+                        <input type="text" id="course-topic-input" placeholder="e.g. Loops, Joins, Hooks">
+                    </div>
+                    <button class="btn btn-primary btn-search-go" id="courses-search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i> Search
+                    </button>
+                </div>
+
+                <!-- Title of active section -->
+                <h2 id="courses-grid-title" style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    Search Results
+                </h2>
+
+                <!-- Cards Display Grid -->
+                <div class="courses-grid" id="courses-display-grid">
+                    <!-- Courses loaded dynamically -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <a href="dashboard.html" class="mobile-nav-link">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="chat.html" class="mobile-nav-link">
+            <i class="fa-solid fa-robot"></i>
+            <span>AI Buddy</span>
+        </a>
+        <a href="courses.html" class="mobile-nav-link active">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Courses</span>
+        </a>
+        <a href="profile.html" class="mobile-nav-link">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/courses.js"></script>
+</body>
+</html>

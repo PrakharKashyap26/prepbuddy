@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chat with Buddy AI Socratic Coach.">
+    <title>PrepBuddy - AI Buddy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+    <div class="app-frame">
+        <!-- Sidebar -->
+        <aside class="app-sidebar">
+            <div class="brand-section">
+                <div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <span class="brand-name">PrepBuddy</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link" id="sidebar-nav-dash">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="chat.html" class="nav-link active" id="sidebar-nav-chat">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>AI Buddy</span>
+                </a>
+                <a href="courses.html" class="nav-link" id="sidebar-nav-courses">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Course Search</span>
+                </a>
+                <a href="profile.html" class="nav-link" id="sidebar-nav-profile">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-user">
+                <div class="user-avatar" id="sidebar-avatar-initials">PB</div>
+                <div class="user-details">
+                    <span class="user-label-name" id="sidebar-user-name">Loading...</span>
+                    <span class="user-label-skill" id="sidebar-user-skill">Target: Loading...</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Viewport -->
+        <main class="app-viewport">
+            <header class="viewport-header">
+                <h1 class="viewport-title">AI Buddy Coach</h1>
+                <button class="btn btn-danger" id="chat-clear-btn">
+                    <i class="fa-solid fa-trash-can"></i> Clear History
+                </button>
+            </header>
+
+            <!-- Chat Workspace (Fixed height box, locks scrolling inside) -->
+            <div class="chat-workspace">
+                <div class="chat-box">
+                    <!-- Tutor Info Bar -->
+                    <div class="chat-header-actions">
+                        <div class="chat-tutor-identity">
+                            <div class="tutor-avatar"><i class="fa-solid fa-robot"></i></div>
+                            <div class="tutor-info">
+                                <span class="tutor-name">Buddy Socratic Guide</span>
+                                <span class="tutor-status"><i class="fa-solid fa-circle" style="font-size:0.5rem; margin-right:0.25rem;"></i> Active coaching module</span>
+                            </div>
+                        </div>
+                        <div class="tutor-sublabel-desktop" style="font-size: 0.8rem; color: var(--text-muted);">
+                            Guided hints & Socratic analysis enabled.
+                        </div>
+                    </div>
+                    
+                    <!-- Chat Scroll History (The ONLY scrolling container on this page) -->
+                    <div class="chat-scroll" id="chat-scroll-container">
+                        <!-- Chat message bubbles populated dynamically -->
+                    </div>
+                    
+                    <!-- Socratic Quick Prompt suggestions -->
+                    <div class="socratic-prompts-row">
+                        <span class="prompt-tag">Explain recursion using a real-world analogy</span>
+                        <span class="prompt-tag">Ask me a beginner technical question</span>
+                        <span class="prompt-tag">Give me a hint for designing databases</span>
+                        <span class="prompt-tag">Help me optimize an algorithm</span>
+                    </div>
+                    
+                    <!-- Sticky Input Send Bar -->
+                    <div class="chat-input-bar">
+                        <input type="text" id="chat-input-text" placeholder="Ask Buddy a question or share code..." autocomplete="off">
+                        <button class="btn btn-primary btn-send" id="chat-send-btn" aria-label="Send">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Initial empty chat state template -->
+            <div class="empty-chat" id="chat-empty-state" style="display: none;">
+                <i class="fa-regular fa-comments"></i>
+                <h3>Start Socratic Session</h3>
+                <p>Welcome! Buddy AI helps you learn through hints. Type a question or select a prompt tag to begin.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <a href="dashboard.html" class="mobile-nav-link">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="chat.html" class="mobile-nav-link active">
+            <i class="fa-solid fa-robot"></i>
+            <span>AI Buddy</span>
+        </a>
+        <a href="courses.html" class="mobile-nav-link">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Courses</span>
+        </a>
+        <a href="profile.html" class="mobile-nav-link">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

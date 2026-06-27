@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to PrepBuddy - Your intelligent study companion. Discover premium resources, test your progress, and get continuous academic coaching via Gemini AI.">
+    <title>PrepBuddy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Landing Page Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header -->
+        <header class="navbar">
+            <div class="logo">
+                <div class="logo-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                <span class="logo-name">PrepBuddy</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="../frontend/index.html" class="nav-btn" id="nav-btn-enter">Launch App</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="badge" id="intro-badge">Next-Gen Learning Assistant</div>
+                <h1 class="hero-title">Welcome to PrepBuddy</h1>
+                <p class="hero-desc">
+                    Your personal AI-driven preparation tutor designed to guide you through interview preparations, quizzes, and customized course recommendations.
+                </p>
+                <div class="cta-buttons">
+                    <a href="../frontend/index.html" class="btn-main" id="btn-get-started">
+                        Get Started Free <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Visual graphic representation of glass dashboard -->
+                <div class="visual-card">
+                    <div class="card-bar">
+                        <span class="dot-red"></span>
+                        <span class="dot-yellow"></span>
+                        <span class="dot-green"></span>
+                    </div>
+                    <div class="card-body-mock">
+                        <div class="mock-line-long"></div>
+                        <div class="mock-line-short"></div>
+                        <div class="mock-grid">
+                            <div class="mock-block"></div>
+                            <div class="mock-block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section id="features" class="features-section">
+            <h2 class="section-title">Designed for Accelerated Upskilling</h2>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card" id="feat-ai">
+                    <div class="feat-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>AI Learning Coach</h3>
+                    <p>Get guided directions and Socratic questioning rather than plain direct answers, teaching you how to learn.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card" id="feat-course">
+                    <div class="feat-icon"><i class="fa-solid fa-search"></i></div>
+                    <h3>Custom Course Finder</h3>
+                    <p>Integrates with Google Custom Search API to index and point out relevant online educational resources tailored to your skill gaps.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card" id="feat-quiz">
+                    <div class="feat-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <h3>Smart Evaluation</h3>
+                    <p>Generate challenges and interactive quizzes powered by Gemini models to test your skills dynamically.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 PrepBuddy. Designed for student excellence.</p>
+        </footer>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

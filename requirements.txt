@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+google-genai
+requests
+python-dotenv
+sqlalchemy
+passlib[bcrypt]
+python-jose
+email-validator
