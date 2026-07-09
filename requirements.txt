@@ -4,6 +4,11 @@ google-genai
 requests
 python-dotenv
 sqlalchemy
+bcrypt
 passlib[bcrypt]
 python-jose
 email-validator
+
+# Testing
+pytest
+httpx
